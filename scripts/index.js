@@ -25,22 +25,39 @@ let initialCards = [
   },
 ];
 
-initialCards.forEach(function (e) {
-  console.log(e);
-});
-
+/* vars form profile */
 const editProfileButton = document.querySelector(".profile__edit-button");
 const modalEditProfile = document.querySelector("#edit-popup");
-const closePopup = modalEditProfile.querySelector(".popup__close");
+const closePopupProfile = modalEditProfile.querySelector(".popup__close");
 const formProfile = modalEditProfile.querySelector("#edit-profile-form");
-let nameTitle = document.querySelector(".profile__title");
-let description = document.querySelector(".profile__description");
-let nameProfileForm = formProfile.querySelector(".popup__input_type_name");
-let descriptionProfileForm = formProfile.querySelector(
+const nameTitle = document.querySelector(".profile__title");
+const description = document.querySelector(".profile__description");
+const nameProfileForm = formProfile.querySelector(".popup__input_type_name");
+const descriptionProfileForm = formProfile.querySelector(
   ".popup__input_type_description",
 );
 
-/* functions */
+/* vars cards */
+const cardsContainer = document.querySelector(".cards__list");
+const cardTemplate = document
+  .querySelector("#cardTemplate")
+  .content.querySelector(".card");
+const cardName = document.querySelector(".popup__input_type_card-name");
+const cardLink = document.querySelector(".popup__input_type_url");
+
+/* vars form cards */
+const addCardButton = document.querySelector(".profile__add-button");
+const modalNewCard = document.querySelector("#new-card-popup");
+const closePopupCard = modalNewCard.querySelector(".popup__close");
+const formNewCard = modalNewCard.querySelector("#new-card-form");
+
+/* vars popup image */
+const modalImagePopup = document.querySelector("#image-popup");
+const closeImagePopup = modalImagePopup.querySelector(".popup__close");
+const popupImage = document.querySelector(".popup__image");
+const popupCaption = document.querySelector(".popup__caption");
+
+/* form profile functions */
 function fillProfileForm() {
   nameProfileForm.value = nameTitle.textContent;
   descriptionProfileForm.value = description.textContent;
@@ -66,13 +83,83 @@ function handleProfileFormSubmit(e) {
   closeModal(modalEditProfile);
 }
 
-/* listners */
+/* cards */
+function renderCard(cardName, cardLink) {
+  const cardEl = getCardElement(cardName, cardLink);
+  cardsContainer.append(cardEl);
+}
+
+function getCardElement(cardName, cardLink) {
+  const cardElement = cardTemplate.cloneNode(true);
+  const linkElement = cardElement.querySelector(".card__image");
+  if (!cardLink) {
+    linkElement.setAttribute("src", "./images/placeholder.jpg");
+  } else {
+    linkElement.setAttribute("src", cardLink);
+  }
+
+  const nameElement = cardElement.querySelector(".card__title");
+  if (!cardName) {
+    nameElement.textContent = "Lugar sem nome";
+  } else {
+    nameElement.textContent = cardName;
+  }
+
+  const cardLikeBtn = cardElement.querySelector(".card__like-button");
+  cardLikeBtn.addEventListener("click", function (e) {
+    cardLikeBtn.classList.toggle("card__like-button_is-active");
+  });
+
+  const cardDeleteBtn = cardElement.querySelector(".card__delete-button");
+  cardDeleteBtn.addEventListener("click", function () {
+    cardElement.remove();
+  });
+
+  linkElement.addEventListener("click", function () {
+    popupImage.setAttribute("src", cardLink);
+    popupCaption.textContent = cardName;
+    openModal(modalImagePopup);
+  });
+
+  return cardElement;
+}
+
+/* form cards */
+function handleCardFormSubmit(e) {
+  e.preventDefault();
+
+  const newCard = getCardElement(cardName.value, cardLink.value);
+  cardsContainer.prepend(newCard);
+
+  formNewCard.reset();
+  closeModal(modalNewCard);
+}
+
+initialCards.forEach((card) => {
+  renderCard(card.name, card.link);
+});
+
+/* listeners */
 editProfileButton.addEventListener("click", function () {
   handleOpenEditModal(modalEditProfile);
 });
 
-closePopup.addEventListener("click", function (e) {
+addCardButton.addEventListener("click", function () {
+  openModal(modalNewCard);
+});
+
+closePopupProfile.addEventListener("click", function (e) {
   closeModal(modalEditProfile);
 });
 
+closePopupCard.addEventListener("click", function (e) {
+  closeModal(modalNewCard);
+});
+
+closeImagePopup.addEventListener("click", function (e) {
+  closeModal(modalImagePopup);
+});
+
 formProfile.addEventListener("submit", handleProfileFormSubmit);
+
+formNewCard.addEventListener("submit", handleCardFormSubmit);

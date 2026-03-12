@@ -38,7 +38,7 @@ Interface
 
 - Manipulação de classes CSS para abrir/fechar popups
 
-- Uso de <template> HTML para criar novos cartões
+- Uso de template HTML para criar novos cartões
 
 ### Melhorias
 

@@ -1,4 +1,4 @@
-let initialCards = [
+const initialCards = [
   {
     name: "Vale de Yosemite",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_yosemite.jpg",
@@ -93,9 +93,9 @@ function getCardElement(cardName, cardLink) {
   const cardElement = cardTemplate.cloneNode(true);
   const linkElement = cardElement.querySelector(".card__image");
   if (!cardLink) {
-    linkElement.setAttribute("src", "./images/placeholder.jpg");
+    linkElement.src = "./images/placeholder.jpg";
   } else {
-    linkElement.setAttribute("src", cardLink);
+    linkElement.src = cardLink;
   }
 
   const nameElement = cardElement.querySelector(".card__title");
@@ -104,9 +104,10 @@ function getCardElement(cardName, cardLink) {
   } else {
     nameElement.textContent = cardName;
   }
+  linkElement.alt = nameElement.textContent;
 
   const cardLikeBtn = cardElement.querySelector(".card__like-button");
-  cardLikeBtn.addEventListener("click", function (e) {
+  cardLikeBtn.addEventListener("click", function () {
     cardLikeBtn.classList.toggle("card__like-button_is-active");
   });
 
@@ -116,7 +117,7 @@ function getCardElement(cardName, cardLink) {
   });
 
   linkElement.addEventListener("click", function () {
-    popupImage.setAttribute("src", cardLink);
+    popupImage.src = cardLink;
     popupCaption.textContent = cardName;
     openModal(modalImagePopup);
   });

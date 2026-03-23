@@ -44,4 +44,4 @@ Interface
 
 - Persistência de dados (LocalStorage ou API)
 
-- Fechamento de modais com click fora do modal
+- Alternativas para upload de imagem

@@ -238,6 +238,13 @@ document.addEventListener("keydown", function (e) {
   }
 });
 
+document.addEventListener("mousedown", (e) => {
+  const popup = e.target.closest(".popup");
+  if (e.target === popup) {
+    closeModal(popup);
+  }
+});
+
 formProfile.addEventListener("submit", handleProfileFormSubmit);
 
 formNewCard.addEventListener("submit", handleCardFormSubmit);

@@ -71,17 +71,33 @@
           <form class="popup__form" id="edit-profile-form">
             <input
               class="popup__input popup__input_type_name"
+              id="name"
               name="name"
               placeholder="Nome"
+              minlength="2"
+              maxlength="40"
               type="text"
+              required
             />
+            <span class="name-input-error popup__input-error"
+              >Este campo é obrigatório.</span
+            >
             <input
               class="popup__input popup__input_type_description"
+              id="description"
               name="description"
               placeholder="Sobre mim"
+              minlength="2"
+              maxlength="200"
               type="text"
+              required
             />
-            <button class="button popup__button" type="submit">Salvar</button>
+            <span class="description-input-error popup__input-error"
+              >Este campo é obrigatório.</span
+            >
+            <button class="button popup__button" type="submit" disabled>
+              Salvar
+            </button>
           </form>
         </div>
       </div>
@@ -96,19 +112,31 @@
           <form class="popup__form" id="new-card-form">
             <input
               class="popup__input popup__input_type_card-name"
+              id="placeName"
               name="place-name"
               placeholder="Título"
-              required
+              minlength="2"
+              maxlength="30"
               type="text"
+              required
             />
+            <span class="placeName-input-error popup__input-error"
+              >Este campo é obrigatório.</span
+            >
             <input
               class="popup__input popup__input_type_url"
+              id="link"
               name="link"
               placeholder="Link de Imagem"
-              required
               type="url"
+              required
             />
-            <button class="button popup__button" type="submit">Criar</button>
+            <span class="link-input-error popup__input-error"
+              >Este campo é obrigatório.</span
+            >
+            <button class="button popup__button" type="submit" disabled>
+              Criar
+            </button>
           </form>
         </div>
       </div>

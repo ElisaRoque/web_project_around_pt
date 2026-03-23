@@ -42,8 +42,6 @@ Interface
 
 ### Melhorias
 
-- Validação de formulário
-
 - Persistência de dados (LocalStorage ou API)
 
-- Fechamento de modais com ESC e click fora do modal
+- Fechamento de modais com click fora do modal

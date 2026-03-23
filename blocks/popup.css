@@ -76,10 +76,6 @@
   margin-bottom: 10px;
 }
 
-.popup__input:last-of-type {
-  margin-bottom: 0;
-}
-
 .popup__title {
   margin: 0;
   font-size: 24px;
@@ -115,6 +111,33 @@
   left: 0;
   top: calc(100% + 10px);
   margin: 0;
+}
+
+/* error */
+.popup__input-error {
+  display: none;
+  font-size: 12px;
+  color: #ff0000;
+}
+
+.popup__input_type_error {
+  border-bottom: 1px solid #ff0000;
+}
+
+.popup__input-error_active {
+  display: block;
+  color: #ff0000;
+  font-size: 12px;
+}
+
+/* disabled */
+.popup__button:disabled {
+  background: #ffffff;
+  color: #000000;
+  cursor: not-allowed;
+  opacity: 20%;
+  border: 1px solid #000000;
+  border-radius: 2px;
 }
 
 @media screen and (max-width: 544px) {

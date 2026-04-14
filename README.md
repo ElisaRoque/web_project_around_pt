@@ -4,44 +4,42 @@
 
 Aplicação web interativa para gerenciamento de cartões de lugares, permitindo editar o perfil do usuário, adicionar novos cartões com imagem e título, curtir cartões, removê-los e visualizar imagens ampliadas em um popup.
 
-Ela é construída com HTML, CSS e JavaScript puro.
+Ela é construída com HTML, CSS e JavaScript puro, com foco em manipulação de DOM e organização modular do código.
 
 ### Funcionalidades
 
 Perfil
 
-- Editar nome e descrição do perfil
-
-- Formulário abre em popup
-
+- Edição de nome e descrição
+- Formulário abre em modal
 - Atualização imediata no DOM
 
 Cartões
 
-- Criação dinâmica de novos cartões
-
+- Criação dinâmica a partir de template
 - Remoção de cartões
-
-- Botão de curtir
+- Botão de curtir (toggle)
 
 Imagens
 
-- Abertura de imagem ampliada em modal
-
-- Exibição de legenda da imagem
+- Abertura ampliada em modal
+- Exibição de legenda
 
 Formulários
 
+- Validação de campos
 - Limpeza automática após envio
 
 Interface
 
-- Manipulação de classes CSS para abrir/fechar popups
+- Controle de modais via classes CSS
 
-- Uso de template HTML para criar novos cartões
+- Fechamento por: botão, tecla ESC, clique fora do modal
 
-### Melhorias
+### Tecnologias utilizadas
 
-- Persistência de dados (LocalStorage ou API)
-
-- Alternativas para upload de imagem
+- HTML5
+- CSS3 (BEM)
+- JavaScript (ES6+)
+- Manipulação de DOM
+- POO

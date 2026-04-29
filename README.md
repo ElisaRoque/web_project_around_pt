@@ -1,4 +1,4 @@
-# Tripleten | Web Projec Around
+# Tripleten | Web Project Around
 
 ## Descrição
 
@@ -22,7 +22,7 @@ Cartões
 
 Imagens
 
-- Abertura ampliada em modal
+- Visualização ampliada em modal
 - Exibição de legenda
 
 Formulários
@@ -43,3 +43,15 @@ Interface
 - JavaScript (ES6+)
 - Manipulação de DOM
 - POO
+
+## Acesse o projeto
+
+https://elisaroque.github.io/web_project_around_pt/
+
+### Teste de criação de cartões
+
+O campo de imagem aceita URLs diretas. Para facilitar os testes, você pode utilizar imagens públicas como as abaixo:
+
+- https://images.unsplash.com/photo-1501785888041-af3ef285b470
+- https://images.unsplash.com/photo-1500530855697-b586d89ba3ee
+- https://images.unsplash.com/photo-1493244040629-496f6d136cc3

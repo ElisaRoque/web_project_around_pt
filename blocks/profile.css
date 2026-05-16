@@ -4,6 +4,7 @@
   display: flex;
   align-items: center;
   padding: 40px 0 32px;
+  position: relative;
 }
 
 .profile__info {
@@ -44,6 +45,23 @@
   object-fit: cover;
   background-position: center;
   margin-right: 29px;
+}
+
+.profile__image-edit-button {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  left: 0;
+  top: 40px;
+  border: none;
+  border-radius: 50%;
+  opacity: 0;
+}
+
+.profile__image-edit-button:hover {
+  background: #000000cc url("../images/edit-icon.svg") center no-repeat;
+  cursor: pointer;
+  opacity: 1;
 }
 
 .profile__add-button {

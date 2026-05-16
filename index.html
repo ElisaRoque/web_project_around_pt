@@ -18,15 +18,20 @@
       </header>
       <main class="content">
         <section class="profile page__section">
-          <img class="profile__image" src="./images/avatar.jpg" alt="Avatar" />
+          <img class="profile__image" src="" alt="Avatar" />
+          <button
+            class="profile__image-edit-button"
+            type="button"
+            aria-label="Editar foto"
+          ></button>
           <div class="profile__info">
-            <h1 class="profile__title">Jacques Cousteau</h1>
+            <h1 class="profile__title"></h1>
             <button
               aria-label="Editar perfil"
               class="profile__edit-button"
               type="button"
             ></button>
-            <p class="profile__description">Explorador</p>
+            <p class="profile__description"></p>
           </div>
           <button
             aria-label="Adicionar cartão"
@@ -101,6 +106,32 @@
           </form>
         </div>
       </div>
+      <div class="popup" id="edit-photo-popup">
+        <div class="popup__content">
+          <button
+            aria-label="Fechar pop-up"
+            class="popup__close"
+            type="button"
+          ></button>
+          <h3 class="popup__title">Editar a foto do perfil</h3>
+          <form class="popup__form" id="edit-photo-profile-form">
+            <input
+              class="popup__input popup__input_type_url"
+              id="link"
+              name="link"
+              placeholder="Link de Imagem"
+              type="url"
+              required
+            />
+            <span class="link-input-error popup__input-error"
+              >Este campo é obrigatório.</span
+            >
+            <button class="button popup__button" type="submit" disabled>
+              Salvar
+            </button>
+          </form>
+        </div>
+      </div>
       <div class="popup" id="new-card-popup">
         <div class="popup__content">
           <button
@@ -149,6 +180,19 @@
           ></button>
           <img alt="" class="popup__image" src="#" />
           <p class="popup__caption"></p>
+        </div>
+      </div>
+      <div class="popup" id="delete-card-popup">
+        <div class="popup__content">
+          <button
+            aria-label="Fechar pop-up"
+            class="popup__close"
+            type="button"
+          ></button>
+          <h3 class="popup__title">Tem certeza?</h3>
+          <form class="popup__form" id="delete-card-form">
+            <button class="button popup__button" type="submit">Sim</button>
+          </form>
         </div>
       </div>
     </div>

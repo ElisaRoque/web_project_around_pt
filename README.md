@@ -59,20 +59,24 @@ Interface
 - API REST
 - Modularização com import/export
 
-## Acesse o projeto
+## Screenshots
 
-https://elisaroque.github.io/web_project_around_pt/
+### Página principal
 
-## Teste de criação de cartões e alteração de avatar
+![Página principal](./images/screenshots/pagina_inicial.png)
 
-Os campos de imagem aceitam links diretos de imagem.
+### Edição de perfil
 
-### Avatar
+![Popup de edição](./images/screenshots/editar_perfil.png)
 
-- https://i.pravatar.cc/300?img=5
+### Criação de cartões
 
-### Lugares
+![Novo cartão](./images/screenshots/novo_card.png)
 
-- https://images.unsplash.com/photo-1501785888041-af3ef285b470
-- https://images.unsplash.com/photo-1500530855697-b586d89ba3ee
-- https://images.unsplash.com/photo-1493244040629-496f6d136cc3
+### Confirmação de exclusão
+
+![Exclusão de cartão](./images/screenshots/deletar_card.png)
+
+### Visualização de fotos
+
+![Visualização](./images/screenshots/visualizar_foto.png)
